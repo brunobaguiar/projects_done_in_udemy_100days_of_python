@@ -1,0 +1,50 @@
+{% include "header.html" %}
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{{cafe.img_url}}')">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-10 mx-auto">
+				<div class="cafe-heading">
+                    <br><br><br><br><br><br>
+
+                    <br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+  </header>
+
+  <!-- cafe Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <h1>{{cafe.name}}</h1>
+					<span class="meta">Cafe location is
+                    <a href="#">{{cafe.location}}</a></span>
+            <br><br>
+            <h3 class="cafe-subtitle">
+            <iframe src="{{cafe.map_url}}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </h3>
+            <br><br>
+            <h2>
+                This cafe has sockets? {{cafe.has_sockets}}<br>
+                This cafe has toilet? {{cafe.has_toilet}}<br>
+                This cafe has wifi? {{cafe.has_wifi}}<br>
+                Can take calls in this cafe? {{cafe.can_take_calls}}<br>
+                This cafe has {{cafe.seats}} seats<br>
+                The price of each coffee is {{cafe.coffee_price}}
+            </h2>
+            <hr>
+           <div class="clearfix">
+          <a class="btn btn-primary float-right" href="{{url_for('edit_cafe', cafe_id=cafe.id)}}">Edit cafe</a>
+        </div>
+          </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+{% include "footer.html" %}
