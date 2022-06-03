@@ -102,7 +102,7 @@ Summary of what I learned trough this course:
 - [Day 68](day-68-authentication_with_flask_register_login): Authentication with Flask
 - [Day 69](day-69-blog_with_users): Blog Capstone Project Part 4 - Adding Users
 - [Day 70](no-project): Deploying Your Web Application with Heroku
-- [Day 71](day-71-data exploration with Pandas): Data Exploration with Pandas: College Major
+- [Day 71](): Data Exploration with Pandas: College Major
 - [Day 72](day-72-data-visualization-with-matpltlib-programming-languages): Data Visualisation with Matplotlib: Programming Languages
 - [Day 73](day-73-aggregate-&-merge-data-with-pandas): Aggregate & Merge Data with Pandas: Analyse the LEGO Dataset
 - [Day 74](day-74-google-trends-data-resampling-and-visualising-time-series): Google Trends Data: Resampling and Visualising Time Series
