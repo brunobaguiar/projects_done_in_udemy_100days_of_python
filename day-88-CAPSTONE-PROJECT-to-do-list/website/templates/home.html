@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<h1 align="center">Tasks {{ current_user.first_name }}</h1>
+    <ul class="list-group list-group-flush" id="tasks">
+      {% for task in user.tasks %}
+      <li class="list-group-item">
+        {{ task.data }}
+        <br>
+        {% if task.status == False: %}
+          <span class="label label-default">Not Completed</span>
+        {% else: %}
+          <span class="label label-success">Completed</span>
+        {% endif %}
+        <a type="button" class="btn btn-warning" href="/update-task/{{ task.id }}">Update</a>
+        <a type="button" class="btn btn-danger" href="/delete-task/{{ task.id }}">Delete</a>
+      </li>
+      {% endfor %}
+    </ul>
+    <form method="POST">
+      <textarea name="task" id="task" class="form-control"></textarea>
+      <br />
+      <div align="center">
+        <button type="submit" class="btn btn-primary">Add Task</button>
+      </div>
+    </form>
+{% endblock %}
