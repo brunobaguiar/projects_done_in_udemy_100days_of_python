@@ -5,6 +5,7 @@ from pprint import pprint
 DOWNLOAD_PATH = os.path.normpath('C:/Users/PC/Downloads')
 
 
+## ------------------------- 1. move files to extension folder ------------------------------------------------------##
 def move_files_to_extension_folder():
     # Create a dict with keys as extension folders and values as a list of each extension file
     file_mappings = {}
@@ -39,6 +40,7 @@ def move_files_to_extension_folder():
             os.rename(source, destination)
 
 
+## ------------------------- 2. Move files to download folder ------------------------------------------------------##
 def move_files_to_download_folder():
     # Create a list of folders inside Download folder
     downloads_folders = []
@@ -56,10 +58,34 @@ def move_files_to_download_folder():
                 os.rmdir(folder_full_path)
 
 
-choose = input('Type "1" for move_files_to_extension_folder or "2" to move files to download folder"')
+## ------------------------- 3. Move files to specified folder ------------------------------------------------------##
+
+# Describe folder path and destination
+FOLDER_PATH = os.path.normpath(
+    'C:/Users/PC/Documents/Projetos Portifólio/brazilian_it_jobs_analysis/dataset/Vagas TI Consultoria/ChatExport_2022-06-08/photos')
+DESTINATION_PATH = os.path.normpath(
+    'C:/Users/PC/Documents/Projetos Portifólio/brazilian_it_jobs_analysis/dataset/Vagas TI Consultoria/ChatExport_2022-06-08/photos/delete')
+
+
+def move_files_to_folder():
+    for filename in os.listdir(FOLDER_PATH):
+        # Choose the key word of the files to move
+        if "thumb" in filename:
+            print("find")
+            source = os.path.join(FOLDER_PATH, filename)
+            destination = os.path.join(DESTINATION_PATH, filename)
+            pprint(f"Move from {source} to {destination}")
+            # Comment above line to test before move the files
+            os.rename(source, destination)
+
+
+choose = input(
+    'Type "1" for move files to extension folder or "2" to move files to download folder" or "3" to move files to specified folder"')
 if choose == "1":
     move_files_to_extension_folder()
 elif choose == "2":
     move_files_to_download_folder()
+elif choose == "3":
+    move_files_to_folder()
 else:
     pass
